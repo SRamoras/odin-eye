@@ -1,0 +1,11 @@
+{
+  "name": "odin-eye-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
