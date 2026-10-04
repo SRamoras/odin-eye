@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import type { Issue } from "./types";
 import { Highlight } from "./overlay/Highlight";
+import { Panel } from "./panel/Panel";
 import { runAllChecks } from "./checks";
 
 export function OdinEye() {
   const [mounted, setMounted] = useState(false);
   const [issues, setIssues] = useState<Issue[]>([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -13,6 +15,9 @@ export function OdinEye() {
   }, []);
 
   if (!mounted) return null;
+
+  const errors = issues.filter((issue) => issue.severity === "error").length;
+  const warnings = issues.length - errors;
 
   return (
     <>
@@ -23,21 +28,33 @@ export function OdinEye() {
           )
       )}
 
-      <div
+      {open && <Panel issues={issues} />}
+
+      <button
+        onClick={() => setOpen((value) => !value)}
+        aria-label={`OdinEye: ${errors} errors, ${warnings} warnings`}
         style={{
           position: "fixed",
           bottom: 16,
           right: 16,
+          display: "flex",
+          alignItems: "center",
+          gap: 8,
           padding: "8px 12px",
+          border: "1px solid #333",
+          borderRadius: 8,
           background: "#111",
           color: "#fff",
-          borderRadius: 8,
+          fontFamily: "system-ui, sans-serif",
           fontSize: 13,
+          cursor: "pointer",
           zIndex: 2147483647,
         }}
       >
-        👁️ {issues.length} {issues.length === 1 ? "issue" : "issues"}
-      </div>
+        <span>👁️</span>
+        <span style={{ color: "#ef4444" }}>● {errors}</span>
+        <span style={{ color: "#f59e0b" }}>● {warnings}</span>
+      </button>
     </>
   );
 }
