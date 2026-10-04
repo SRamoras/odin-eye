@@ -11,7 +11,13 @@ export function OdinEye() {
 
   useEffect(() => {
     setMounted(true);
-    setIssues(runAllChecks());
+
+    const run = () => setIssues(runAllChecks());
+
+    run();
+    // volta a analisar quando as imagens acabarem de carregar
+    window.addEventListener("load", run);
+    return () => window.removeEventListener("load", run);
   }, []);
 
   if (!mounted) return null;
