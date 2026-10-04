@@ -1,4 +1,4 @@
-export type Category = "accessibility" | "ui";
+export type Category = "accessibility" | "ui" | "seo";
 export type Severity = "error" | "warning";
 
 export interface Issue {
@@ -7,5 +7,5 @@ export interface Issue {
   severity: Severity;
   title: string;
   description: string;
-  element: Element;
+  element: Element | null;
 }
