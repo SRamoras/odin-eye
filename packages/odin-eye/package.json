@@ -1,6 +1,6 @@
 {
   "name": "odin-eye",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Find accessibility and UI issues directly on your page while you develop",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SRamoras/odin-eye"
+    "url": "git+https://github.com/SRamoras/odin-eye.git"
   },
   "keywords": [
     "react",

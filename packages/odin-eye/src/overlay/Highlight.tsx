@@ -21,7 +21,6 @@ export function Highlight({ issue }: { issue: Issue }) {
     };
   }, [issue.element]);
 
-  // ainda não mediu, ou o elemento está escondido
   if (!rect || (rect.width === 0 && rect.height === 0)) return null;
 
   const color = COLORS[issue.severity];

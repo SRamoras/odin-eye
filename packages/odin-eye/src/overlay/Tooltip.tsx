@@ -10,10 +10,8 @@ interface TooltipProps {
 }
 
 export function Tooltip({ issue, rect, color }: TooltipProps) {
-  // não deixa o tooltip sair pelos lados do ecrã
   const left = Math.min(Math.max(rect.left, 8), window.innerWidth - WIDTH - 8);
 
-  // se não houver espaço em baixo, aparece por cima do elemento
   const showAbove = rect.bottom + SPACE_NEEDED > window.innerHeight && rect.top > SPACE_NEEDED;
   const vertical = showAbove
     ? { bottom: window.innerHeight - rect.top + 8 }
