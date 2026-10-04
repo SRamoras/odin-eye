@@ -20,7 +20,7 @@ export function OdinEye() {
   const warnings = issues.length - errors;
 
   return (
-    <>
+    <div data-odin-eye>
       {issues.map(
         (issue) =>
           issue.element && (
@@ -55,6 +55,6 @@ export function OdinEye() {
         <span style={{ color: "#ef4444" }}>● {errors}</span>
         <span style={{ color: "#f59e0b" }}>● {warnings}</span>
       </button>
-    </>
+    </div>
   );
 }

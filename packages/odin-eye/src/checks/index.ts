@@ -4,5 +4,8 @@ import * as seo from "./seo";
 
 export function runAllChecks(): Issue[] {
   const checks = [...Object.values(accessibility), ...Object.values(seo)];
-  return checks.flatMap((check) => check());
+
+  return checks
+    .flatMap((check) => check())
+    .filter((issue) => !issue.element?.closest("[data-odin-eye]"));
 }
