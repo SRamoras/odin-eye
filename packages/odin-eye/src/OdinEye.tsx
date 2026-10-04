@@ -1,18 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Issue } from "./types";
 import { Highlight } from "./overlay/Highlight";
-
-import {
-  checkImagesWithoutAlt,
-  checkButtonsWithoutName,
-  checkLinksWithoutName,
-  checkInputsWithoutLabel,
-  checkHtmlWithoutLang,
-  checkPageWithoutTitle,
-  checkMultipleH1,
-  checkDuplicateIds,
-  checkHeadingOrder,
-} from "./checks/accessibility";
+import { runAllChecks } from "./checks";
 
 export function OdinEye() {
   const [mounted, setMounted] = useState(false);
@@ -20,17 +9,7 @@ export function OdinEye() {
 
   useEffect(() => {
     setMounted(true);
-    setIssues([
-      ...checkImagesWithoutAlt(),
-      ...checkButtonsWithoutName(),
-      ...checkLinksWithoutName(),
-      ...checkInputsWithoutLabel(),
-      ...checkHtmlWithoutLang(),
-      ...checkPageWithoutTitle(),
-      ...checkMultipleH1(),
-      ...checkDuplicateIds(),
-      ...checkHeadingOrder(),
-    ]);
+    setIssues(runAllChecks());
   }, []);
 
   if (!mounted) return null;
