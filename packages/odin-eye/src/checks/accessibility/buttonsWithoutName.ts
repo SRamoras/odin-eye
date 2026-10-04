@@ -1,6 +1,6 @@
 import type { Issue } from '../../types'
 
-export function checkButtonsWithoutText(): Issue[] {
+export function checkButtonsWithoutName(): Issue[] {
     const buttons = Array.from(document.querySelectorAll("button"))
     const buttonsWithoutName = buttons.filter(button => !button.hasAttribute("aria-label") && !button.textContent?.trim())
 
