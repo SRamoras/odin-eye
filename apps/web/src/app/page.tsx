@@ -1,69 +1,82 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+/* eslint-disable @next/next/no-img-element, jsx-a11y/alt-text */
+
+const icon = (
+  <svg width="16" height="16">
+    <circle cx="8" cy="8" r="6" />
+  </svg>
+);
+
+const row = { display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" } as const;
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main style={{ padding: 40, display: "grid", gap: 16 }}>
+      <h1>OdinEye Playground</h1>
+
+      <h2>Images</h2>
+      <div style={row}>
+        {/* ❌ no alt */}
+        <img src="/next.svg" width={120} />
+        {/* ✅ has alt */}
+        <img src="/vercel.svg" width={40} alt="Vercel logo" />
+      </div>
+
+      <h2>Buttons</h2>
+      <div style={row}>
+        {/* ❌ icon only */}
+        <button>{icon}</button>
+        {/* ❌ only spaces */}
+        <button>{"   "}</button>
+        {/* ✅ has text */}
+        <button>Send</button>
+        {/* ✅ has aria-label */}
+        <button aria-label="Close">{icon}</button>
+      </div>
+
+      <h2>Links</h2>
+      <div style={row}>
+        {/* ❌ image without alt (also triggers the image check) */}
+        <a href="#"><img src="/globe.svg" width={24} /></a>
+        {/* ❌ icon only */}
+        <a href="#">{icon}</a>
+        {/* ✅ has text */}
+        <a href="#">About us</a>
+        {/* ✅ has aria-label */}
+        <a href="#" aria-label="GitHub">{icon}</a>
+        {/* ✅ image with alt */}
+        <a href="#"><img src="/file.svg" width={24} alt="My files" /></a>
+      </div>
+
+      <h2>Form fields</h2>
+      <div style={row}>
+        {/* ❌ placeholder only */}
+        <input placeholder="Email" />
+        {/* ❌ select without label */}
+        <select><option>Portugal</option></select>
+        {/* ✅ aria-label */}
+        <input aria-label="Name" />
+        {/* ✅ label with htmlFor */}
+        <label htmlFor="phone">Phone</label>
+        <input id="phone" />
+        {/* ✅ inside a label */}
+        <label>Address <input /></label>
+        {/* ✅ ignored: it's a button */}
+        <input type="submit" value="Send" />
+      </div>
+
+      <h2>Headings</h2>
+      {/* ⚠️ second h1 on the page (both h1s get a yellow box) */}
+      <h1>Second main title</h1>
+      {/* ⚠️ jumps from h2 to h4 */}
+      <h2>Section</h2>
+      <h4>Subsection</h4>
+
+      <h2>Duplicate ids</h2>
+      <div style={row}>
+        {/* ❌ same id twice */}
+        <div id="box">A</div>
+        <div id="box">B</div>
+      </div>
+    </main>
   );
 }

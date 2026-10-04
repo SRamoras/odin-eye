@@ -1,0 +1,9 @@
+export { checkImagesWithoutAlt } from "./imagesWithoutAlt";
+export { checkButtonsWithoutName } from "./buttonsWithoutName";
+export { checkLinksWithoutName } from "./linksWithoutName";
+export { checkInputsWithoutLabel } from "./inputsWithoutLabel";
+export { checkHtmlWithoutLang } from "./htmlWithoutLang";
+export { checkPageWithoutTitle } from "./pageWithoutTitle";
+export { checkMultipleH1 } from "./multipleH1";
+export { checkDuplicateIds } from "./duplicateIds";
+export { checkHeadingOrder } from "./headingOrder";
