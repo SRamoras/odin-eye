@@ -7,5 +7,5 @@ export interface Issue {
   severity: Severity;
   title: string;
   description: string;
-  element: Element;
+  element: Element | null;
 }

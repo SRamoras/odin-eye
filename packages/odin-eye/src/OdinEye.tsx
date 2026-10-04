@@ -37,9 +37,12 @@ export function OdinEye() {
 
   return (
     <>
-      {issues.map((issue) => (
-        <Highlight key={issue.id} issue={issue} />
-      ))}
+      {issues.map(
+        (issue) =>
+          issue.element && (
+            <Highlight key={issue.id} issue={issue} element={issue.element} />
+          )
+      )}
 
       <div
         style={{

@@ -4,12 +4,12 @@ import { Tooltip } from "./Tooltip";
 
 const COLORS = { error: "#ef4444", warning: "#f59e0b" };
 
-export function Highlight({ issue }: { issue: Issue }) {
+export function Highlight({ issue, element }: { issue: Issue; element: Element }) {
   const [rect, setRect] = useState<DOMRect | null>(null);
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
-    const update = () => setRect(issue.element.getBoundingClientRect());
+    const update = () => setRect(element.getBoundingClientRect());
 
     update();
     window.addEventListener("scroll", update, true);
@@ -19,7 +19,7 @@ export function Highlight({ issue }: { issue: Issue }) {
       window.removeEventListener("scroll", update, true);
       window.removeEventListener("resize", update);
     };
-  }, [issue.element]);
+  }, [element]);
 
   if (!rect || (rect.width === 0 && rect.height === 0)) return null;
 
