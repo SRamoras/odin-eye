@@ -1,0 +1,84 @@
+.section {
+  scroll-margin-top: 56px;
+  padding-block: 96px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 80px 32px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--card);
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* pontos parados ao fundo, a desvanecer a partir do topo */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(var(--input) 1px, transparent 1px);
+  background-size: 20px 20px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 0%, #000 10%, transparent 70%);
+  mask-image: radial-gradient(ellipse 60% 70% at 50% 0%, #000 10%, transparent 70%);
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 4px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.muted {
+  display: block;
+  color: var(--muted-foreground);
+}
+
+.text {
+  max-width: 28rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.github {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 4px;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  transition: color 0.15s;
+}
+
+.github:hover {
+  color: var(--foreground);
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding-block: 72px;
+  }
+
+  .card {
+    padding: 56px 20px;
+  }
+}
