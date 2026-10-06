@@ -1,0 +1,43 @@
+.install {
+  display: flex;
+  align-items: stretch;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  overflow: hidden;
+}
+
+.code {
+  display: flex;
+  color: var(--foreground);
+  align-items: center;
+  gap: 10px;
+  padding-inline: 18px 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.prompt {
+  color: var(--faint);
+  user-select: none;
+}
+
+/* .install à frente para ganhar ao tamanho base do Button */
+.install .copy {
+  width: 40px;
+  height: auto;
+  border-left: 1px solid var(--border);
+  border-radius: 0;
+}
+
+@media (max-width: 520px) {
+  .install {
+    width: 100%;
+  }
+
+  .code {
+    flex: 1;
+  }
+}

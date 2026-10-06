@@ -1,0 +1,68 @@
+.stage {
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+}
+
+.panel {
+  width: 100%;
+  border: 1px solid #222;
+  border-radius: 10px;
+  background: #111;
+  color: #ddd;
+  font-family: system-ui, sans-serif;
+  font-size: 0.8125rem;
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.tabs span {
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: #222;
+  font-size: 0.75rem;
+}
+
+.tabs span[data-active="true"] {
+  background: #fff;
+  color: #111;
+}
+
+.row {
+  padding: 8px 12px 8px 26px;
+  border-bottom: 1px solid #222;
+  background: radial-gradient(circle at 13px 50%, #ef4444 4px, transparent 5px);
+}
+
+.row[data-severity="warning"] {
+  background: radial-gradient(circle at 13px 50%, #f59e0b 4px, transparent 5px);
+}
+
+/* o botão do canto, com a contagem */
+.counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  font-size: 0.75rem;
+}
+
+.errors {
+  color: #ef4444;
+}
+
+.warnings {
+  color: #f59e0b;
+}

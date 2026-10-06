@@ -1,0 +1,12 @@
+/* no modo escuro mostra o sol (para passar a claro); no claro, a lua */
+.sun {
+  display: none;
+}
+
+:global(.dark) .sun {
+  display: block;
+}
+
+:global(.dark) .moon {
+  display: none;
+}

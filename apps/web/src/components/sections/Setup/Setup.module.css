@@ -1,0 +1,59 @@
+.steps {
+  display: grid;
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 24px;
+  padding-bottom: 56px;
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+/* linha que liga os números dos passos */
+.step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 48px;
+  bottom: 8px;
+  left: 20px;
+  width: 1px;
+  background: var(--border);
+}
+
+.number {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--foreground);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.875rem;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: start;
+  gap: 40px;
+  padding-top: 8px;
+}
+
+.text {
+  display: grid;
+  gap: 8px;
+}
+
+@media (max-width: 860px) {
+  .body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}

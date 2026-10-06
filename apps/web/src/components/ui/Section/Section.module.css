@@ -1,0 +1,18 @@
+.section {
+  scroll-margin-top: 56px;
+  padding-block: 96px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 48rem;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding-block: 72px;
+  }
+}

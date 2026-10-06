@@ -1,0 +1,69 @@
+.stack {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  overflow: hidden;
+}
+
+.item {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 4px;
+  padding: 24px 20px;
+  border-left: 1px solid var(--border);
+}
+
+.item:first-child {
+  border-left: 0;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 16px;
+}
+
+/* Next.js e Remix são pretos: no modo escuro ficam brancos */
+:global(.dark) .logo[data-mono="true"] {
+  filter: invert(1);
+}
+
+.name {
+  font-weight: inherit;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 1024px) {
+  .stack {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .item:nth-child(4) {
+    border-left: 0;
+  }
+
+  .item:nth-child(n + 4) {
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 520px) {
+  .stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .item:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .item:nth-child(4) {
+    border-left: 1px solid var(--border);
+  }
+
+  .item:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+}

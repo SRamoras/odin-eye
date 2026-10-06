@@ -1,0 +1,152 @@
+.intro {
+  padding-block: 64px 40px;
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+}
+
+.lede {
+  max-width: 40rem;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 24px;
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.swatch {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ef4444;
+  border-radius: 4px;
+}
+
+.swatch[data-kind="warning"] {
+  border-color: #f59e0b;
+}
+
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.jump a {
+  display: block;
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.jump a:hover {
+  background: var(--muted);
+}
+
+/* groups */
+.group {
+  scroll-margin-top: 56px;
+  padding-block: 72px;
+  border-top: 1px solid var(--border);
+}
+
+.groupText {
+  max-width: 40rem;
+  margin-top: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+  margin-bottom: 20px;
+}
+
+/* controlos usados nos exemplos */
+.button {
+  min-width: 36px;
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 1px solid var(--input);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--foreground);
+  font: inherit;
+  cursor: pointer;
+}
+
+.iconLink {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.field {
+  height: 36px;
+  padding-inline: 10px;
+  border: 1px solid var(--input);
+  border-radius: 8px;
+  background: var(--background);
+  font: inherit;
+}
+
+textarea.field {
+  height: auto;
+  padding-block: 6px;
+}
+
+.chip {
+  display: grid;
+  place-items: center;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--muted);
+  font-weight: 600;
+}
+
+.demoHeading {
+  width: 100%;
+  font-size: 1.125rem;
+  letter-spacing: 0;
+}
+
+.overflow {
+  flex: none;
+  width: 120vw;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--foreground);
+  color: var(--card);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

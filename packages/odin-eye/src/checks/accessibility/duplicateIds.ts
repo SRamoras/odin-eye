@@ -5,7 +5,6 @@ export function checkDuplicateIds(): Issue[] {
         (element) => element.id.trim()
     );
 
-    // conta quantas vezes aparece cada id
     const counts = new Map<string, number>();
     for (const element of elements) {
         counts.set(element.id, (counts.get(element.id) ?? 0) + 1);
