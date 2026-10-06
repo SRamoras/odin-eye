@@ -1,0 +1,29 @@
+.example {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+}
+
+.text {
+  margin-top: 6px;
+}
+
+/* a área com os exemplos */
+.stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 24px 28px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--border);
+}
+
+.stage a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

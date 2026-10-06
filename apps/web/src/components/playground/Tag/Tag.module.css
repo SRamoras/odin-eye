@@ -1,0 +1,14 @@
+.tag {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--error-soft);
+  color: var(--error);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tag[data-ok="true"] {
+  background: var(--primary-soft);
+  color: var(--primary);
+}

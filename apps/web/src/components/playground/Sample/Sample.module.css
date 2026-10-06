@@ -1,0 +1,13 @@
+.sample {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+}
+
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+}
