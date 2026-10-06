@@ -1,0 +1,67 @@
+.footer {
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--muted) 30%, transparent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 40px;
+  padding-block: 56px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 32rem;
+}
+
+.author {
+  color: var(--foreground);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.author:hover {
+  color: var(--primary);
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 64px;
+}
+
+.column {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.column ul {
+  display: grid;
+  gap: 10px;
+}
+
+.link {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+
+.link:hover {
+  color: var(--foreground);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .nav {
+    gap: 40px;
+  }
+}
