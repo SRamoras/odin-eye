@@ -1,0 +1,111 @@
+.block {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  overflow: hidden;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 42px;
+  padding-inline: 6px 4px;
+  border-bottom: 1px solid var(--border);
+  background: var(--muted);
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+}
+
+.title {
+  padding-left: 6px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* .bar à frente para ganhar ao tamanho base do Button */
+.bar .copy {
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+}
+
+/* separadores */
+.tabs {
+  display: flex;
+  gap: 2px;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding-inline: 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--foreground);
+}
+
+.tab[aria-pressed="true"] {
+  border-color: var(--border);
+  background: var(--card);
+  color: var(--foreground);
+}
+
+/* código */
+.code {
+  color: var(--foreground);
+  padding: 16px 18px;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  overflow-x: auto;
+}
+
+/* cores do Shiki: cada palavra traz a cor dos dois temas em variáveis */
+.code :global(.shiki) {
+  background: transparent !important;
+  overflow-x: auto;
+}
+
+.code :global(.shiki),
+.code :global(.shiki span) {
+  color: var(--shiki-light);
+}
+
+:global(.dark) .code :global(.shiki),
+:global(.dark) .code :global(.shiki span) {
+  color: var(--shiki-dark);
+}
+
+.code :global(code) {
+  counter-reset: line;
+}
+
+.numbered :global(.line)::before {
+  content: counter(line);
+  counter-increment: line;
+  display: inline-block;
+  width: 1.25rem;
+  margin-right: 1.25rem;
+  color: var(--faint);
+  text-align: right;
+  user-select: none;
+}
+
+.prompt :global(.line)::before {
+  content: "$";
+  margin-right: 0.75rem;
+  color: var(--faint);
+  user-select: none;
+}

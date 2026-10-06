@@ -1,0 +1,47 @@
+.size-xs {
+  font-size: 0.75rem;
+}
+
+.size-sm {
+  font-size: 0.8125rem;
+}
+
+.size-md {
+  font-size: 0.875rem;
+}
+
+.size-lg {
+  font-size: 0.9375rem;
+}
+
+.size-xl {
+  font-size: 1rem;
+}
+
+.size-2xl {
+  font-size: 1.125rem;
+}
+
+.foreground {
+  color: var(--foreground);
+}
+
+.muted {
+  color: var(--muted-foreground);
+}
+
+.faint {
+  color: var(--faint);
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

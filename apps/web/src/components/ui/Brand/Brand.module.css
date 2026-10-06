@@ -1,0 +1,8 @@
+.brand {
+  display: inline-flex;
+  color: var(--foreground);
+  align-items: center;
+  gap: 8px;
+  font-weight: inherit;
+  letter-spacing: -0.02em;
+}
