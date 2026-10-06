@@ -6,9 +6,8 @@ import { InstallCommand } from "@/components/ui/InstallCommand";
 import { Text } from "@/components/ui/Text";
 import styles from "./Hero.module.css";
 
-// Quando o GIF estiver pronto, põe-no em public/ (por exemplo public/hero.gif)
-// e escreve aqui o caminho. Enquanto for null, aparece só o espaço reservado.
-const HERO_GIF: string | null = null;
+// Caminho do vídeo em public/. Se for null, aparece só o espaço reservado.
+const HERO_VIDEO: string | null = "/videos/hero.mp4";
 
 export function Hero() {
   return (
@@ -32,15 +31,22 @@ export function Hero() {
         </div>
 
         <div className={styles.media}>
-          {HERO_GIF ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={HERO_GIF}
-              alt="OdinEye outlining problems on a page and explaining how to fix them"
-              className={styles.gif}
+          {HERO_VIDEO ? (
+            // Sem controlos e sem eventos de rato: o vídeo só corre em loop.
+            <video
+              src={HERO_VIDEO}
+              autoPlay
+              muted
+              loop
+              playsInline
+              disablePictureInPicture
+              disableRemotePlayback
+              tabIndex={-1}
+              aria-label="OdinEye outlining problems on a page and explaining how to fix them"
+              className={styles.video}
             />
           ) : (
-            <Text as="span" size="md" tone="faint" mono>GIF</Text>
+            <Text as="span" size="md" tone="faint" mono>Video</Text>
           )}
         </div>
       </Container>
