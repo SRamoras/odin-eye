@@ -28,7 +28,8 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/" },
-  openGraph: { title, description, images: ["/og.png"] },
+  openGraph: { title, description },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

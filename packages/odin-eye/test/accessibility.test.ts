@@ -27,6 +27,22 @@ describe("checkButtonsWithoutName", () => {
     render(`<button>Send</button><button aria-label="Close"></button>`);
     expect(checkButtonsWithoutName()).toEqual([]);
   });
+
+  it("passes buttons named by aria-labelledby, an image alt, an svg title or title", () => {
+    render(`
+      <span id="close-label">Close</span>
+      <button aria-labelledby="close-label"></button>
+      <button><img src="x.svg" alt="Close"></button>
+      <button><svg><title>Close</title></svg></button>
+      <button title="Close"></button>
+    `);
+    expect(checkButtonsWithoutName()).toEqual([]);
+  });
+
+  it("flags an empty aria-label or an aria-labelledby pointing at nothing", () => {
+    render(`<button aria-label=" "></button><button aria-labelledby="missing"></button>`);
+    expect(checkButtonsWithoutName()).toHaveLength(2);
+  });
 });
 
 describe("checkDuplicateIds", () => {
@@ -92,6 +108,11 @@ describe("checkInputsWithoutLabel", () => {
     expect(checkInputsWithoutLabel()).toEqual([]);
   });
 
+  it("passes fields labelled by aria-labelledby", () => {
+    render(`<span id="q">Search</span><input aria-labelledby="q">`);
+    expect(checkInputsWithoutLabel()).toEqual([]);
+  });
+
   it("ignores hidden and button-like inputs", () => {
     render(`<input type="hidden"><input type="submit"><input type="button"><input type="reset">`);
     expect(checkInputsWithoutLabel()).toEqual([]);
@@ -109,6 +130,15 @@ describe("checkLinksWithoutName", () => {
       <a href="/">Home</a>
       <a href="/" aria-label="Home"></a>
       <a href="/"><img src="logo.png" alt="Home"></a>
+    `);
+    expect(checkLinksWithoutName()).toEqual([]);
+  });
+
+  it("passes icon links named by aria-labelledby or an svg title", () => {
+    render(`
+      <span id="gh">GitHub</span>
+      <a href="/gh" aria-labelledby="gh"><svg></svg></a>
+      <a href="/gh"><svg><title>GitHub</title></svg></a>
     `);
     expect(checkLinksWithoutName()).toEqual([]);
   });

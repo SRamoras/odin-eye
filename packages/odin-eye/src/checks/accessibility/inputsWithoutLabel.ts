@@ -1,4 +1,5 @@
 import type { Issue } from "../../types";
+import { labelledByText } from "./accessibleName";
 
 const IGNORED_TYPES = ["hidden", "submit", "button", "reset"];
 
@@ -10,10 +11,11 @@ export function checkInputsWithoutLabel(): Issue[] {
     if (IGNORED_TYPES.includes(type)) return false;
 
     const hasAriaLabel = field.getAttribute("aria-label")?.trim();
+    const hasLabelledBy = labelledByText(field);
     const hasLabelFor = field.id && document.querySelector(`label[for="${field.id}"]`);
     const isInsideLabel = field.closest("label");
 
-    return !hasAriaLabel && !hasLabelFor && !isInsideLabel;
+    return !hasAriaLabel && !hasLabelledBy && !hasLabelFor && !isInsideLabel;
   });
 
   return fieldsWithoutLabel.map((field, index): Issue => ({
