@@ -1,15 +1,10 @@
 import type { Issue } from "../../types";
+import { hasAccessibleName } from "./accessibleName";
 
 export function checkLinksWithoutName(): Issue[] {
   const links = Array.from(document.querySelectorAll("a"));
 
-  const linksWithoutName = links.filter((link) => {
-    const hasText = link.textContent?.trim();
-    const hasAriaLabel = link.getAttribute("aria-label")?.trim();
-    const hasImageWithAlt = link.querySelector("img[alt]")?.getAttribute("alt")?.trim();
-
-    return !hasText && !hasAriaLabel && !hasImageWithAlt;
-  });
+  const linksWithoutName = links.filter((link) => !hasAccessibleName(link));
 
   return linksWithoutName.map((link, index): Issue => ({
     id: `link-${index}`,
