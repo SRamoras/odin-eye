@@ -3,6 +3,7 @@ import type { Issue } from "./types";
 import { Highlight } from "./overlay/Highlight";
 import { Panel } from "./panel/Panel";
 import { runAllChecks } from "./checks";
+import { ensureStyles } from "./styles";
 
 const WATCHED_ATTRIBUTES = [
   "alt", "aria-label", "aria-labelledby", "content", "href", "id",
@@ -19,6 +20,7 @@ export function OdinEye() {
   const [, setFrame] = useState(0);
 
   useEffect(() => {
+    ensureStyles();
     setMounted(true);
 
     const run = () => setIssues(runAllChecks());
@@ -96,32 +98,26 @@ export function OdinEye() {
           )
       )}
 
-      {open && <Panel issues={issues} />}
+      {open && <Panel issues={issues} onClose={() => setOpen(false)} />}
 
       <button
+        className="oe-launcher"
         onClick={() => setOpen((value) => !value)}
+        aria-expanded={open}
         aria-label={`OdinEye: ${errors} errors, ${warnings} warnings`}
-        style={{
-          position: "fixed",
-          bottom: 16,
-          right: 16,
-          display: "flex",
-          alignItems: "center",
-          gap: 8,
-          padding: "8px 12px",
-          border: "1px solid #333",
-          borderRadius: 8,
-          background: "#111",
-          color: "#fff",
-          fontFamily: "system-ui, sans-serif",
-          fontSize: 13,
-          cursor: "pointer",
-          zIndex: 2147483647,
-        }}
       >
-        <span>👁️</span>
-        <span style={{ color: "#ef4444" }}>● {errors}</span>
-        <span style={{ color: "#f59e0b" }}>● {warnings}</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+        <span className="oe-count" data-severity="error">
+          <span className="oe-dot" />
+          {errors}
+        </span>
+        <span className="oe-count" data-severity="warning">
+          <span className="oe-dot" />
+          {warnings}
+        </span>
       </button>
     </div>
   );
