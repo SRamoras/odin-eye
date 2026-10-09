@@ -44,7 +44,7 @@ export function Panel({ issues }: { issues: Issue[] }) {
       }}
     >
       {/* separadores */}
-      <div style={{ display: "flex", gap: 6, padding: 10, borderBottom: "1px solid #333" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", flexShrink: 0, gap: 6, padding: 10, borderBottom: "1px solid #333" }}>
         {filters.map((f) => (
           <button
             key={f}
@@ -66,7 +66,10 @@ export function Panel({ issues }: { issues: Issue[] }) {
       </div>
 
       {/* lista */}
-      <div style={{ overflowY: "auto" }}>
+      <div
+        data-lenis-prevent
+        style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain" }}
+      >
         {visible.length === 0 && (
           <div style={{ padding: 16, color: "#888" }}>No issues found 🎉</div>
         )}
