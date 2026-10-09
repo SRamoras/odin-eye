@@ -14,7 +14,9 @@ const SECTIONS = [
 export function Header() {
   return (
     <>
-      <a href="#main" className={styles.skip}>Skip to content</a>
+      <a href="#main" className={styles.skip}>
+        Skip to content
+      </a>
 
       <header className={styles.header}>
         <Container className={styles.inner}>
@@ -30,7 +32,11 @@ export function Header() {
 
           <div className={styles.actions}>
             <Button href="/playground">Playground</Button>
-            <Button href="https://github.com/SRamoras/odin-eye" iconOnly aria-label="OdinEye on GitHub">
+            <Button
+              href="https://github.com/SRamoras/odin-eye"
+              iconOnly
+              aria-label="OdinEye on GitHub"
+            >
               <GitHubIcon />
             </Button>
             <ThemeToggle />

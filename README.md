@@ -65,9 +65,9 @@ Setup for Next.js (App and Pages Router), Vite, Remix / React Router and Gatsby 
 
 ## Works with
 
-| React | Next.js | Vite | Remix / React Router | Gatsby | TypeScript |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| 18 and up | App and Pages Router | React templates | ✓ | ✓ | Types included |
+|   React   |       Next.js        |      Vite       | Remix / React Router | Gatsby |   TypeScript   |
+| :-------: | :------------------: | :-------------: | :------------------: | :----: | :------------: |
+| 18 and up | App and Pages Router | React templates |          ✓           |   ✓    | Types included |
 
 ## What it checks
 
@@ -76,48 +76,48 @@ Setup for Next.js (App and Pages Router), Vite, Remix / React Router and Gatsby 
 <details>
 <summary><b>Accessibility</b> (9)</summary>
 
-| Check | |
-| --- | :---: |
-| Button without accessible name | 🔴 |
-| Link without accessible name | 🔴 |
-| Image without alt text | 🔴 |
-| Form field without label | 🔴 |
-| Duplicate id | 🔴 |
-| Page without language | 🔴 |
-| Page without title | 🔴 |
-| Skipped heading level | 🟡 |
-| Multiple `<h1>` headings | 🟡 |
+| Check                          |     |
+| ------------------------------ | :-: |
+| Button without accessible name | 🔴  |
+| Link without accessible name   | 🔴  |
+| Image without alt text         | 🔴  |
+| Form field without label       | 🔴  |
+| Duplicate id                   | 🔴  |
+| Page without language          | 🔴  |
+| Page without title             | 🔴  |
+| Skipped heading level          | 🟡  |
+| Multiple `<h1>` headings       | 🟡  |
 
 </details>
 
 <details>
 <summary><b>SEO</b> (9)</summary>
 
-| Check | |
-| --- | :---: |
-| Missing meta description | 🔴 |
-| Missing viewport meta tag | 🔴 |
-| Page without `<h1>` | 🔴 |
-| Meta description length | 🟡 |
-| Page title length | 🟡 |
-| Missing canonical link | 🟡 |
-| Missing Open Graph tags | 🟡 |
-| Link without destination | 🟡 |
-| Generic link text | 🟡 |
+| Check                     |     |
+| ------------------------- | :-: |
+| Missing meta description  | 🔴  |
+| Missing viewport meta tag | 🔴  |
+| Page without `<h1>`       | 🔴  |
+| Meta description length   | 🟡  |
+| Page title length         | 🟡  |
+| Missing canonical link    | 🟡  |
+| Missing Open Graph tags   | 🟡  |
+| Link without destination  | 🟡  |
+| Generic link text         | 🟡  |
 
 </details>
 
 <details>
 <summary><b>UI and layout</b> (6)</summary>
 
-| Check | |
-| --- | :---: |
-| Element wider than the page | 🔴 |
-| Broken image | 🔴 |
-| Distorted image | 🟡 |
-| Image larger than needed | 🟡 |
-| Touch target too small | 🟡 |
-| Text too small | 🟡 |
+| Check                       |     |
+| --------------------------- | :-: |
+| Element wider than the page | 🔴  |
+| Broken image                | 🔴  |
+| Distorted image             | 🟡  |
+| Image larger than needed    | 🟡  |
+| Touch target too small      | 🟡  |
+| Text too small              | 🟡  |
 
 </details>
 

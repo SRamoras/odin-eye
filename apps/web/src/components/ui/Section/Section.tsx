@@ -16,9 +16,15 @@ export function Section({ id, eyebrow, title, lead, children }: SectionProps) {
     <section id={id} aria-labelledby={`${id}-title`} className={styles.section}>
       <Container>
         <header className={styles.header}>
-          <Text size="md" tone="muted" weight="medium">{eyebrow}</Text>
+          <Text size="md" tone="muted" weight="medium">
+            {eyebrow}
+          </Text>
           <Heading id={`${id}-title`}>{title}</Heading>
-          {lead && <Text size="xl" tone="muted">{lead}</Text>}
+          {lead && (
+            <Text size="xl" tone="muted">
+              {lead}
+            </Text>
+          )}
         </header>
         {children}
       </Container>

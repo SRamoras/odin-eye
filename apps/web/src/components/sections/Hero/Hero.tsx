@@ -17,8 +17,8 @@ export function Hero() {
         </Heading>
 
         <Text size="lg" tone="muted" className={styles.lead}>
-          OdinEye marks accessibility, SEO and layout problems right on the page, and
-          tells you how to fix them.
+          OdinEye marks accessibility, SEO and layout problems right on the page, and tells you how
+          to fix them.
         </Text>
 
         <div className={styles.actions}>
@@ -44,7 +44,9 @@ export function Hero() {
               className={styles.video}
             />
           ) : (
-            <Text as="span" size="md" tone="faint" mono>Video</Text>
+            <Text as="span" size="md" tone="faint" mono>
+              Video
+            </Text>
           )}
         </div>
       </Container>

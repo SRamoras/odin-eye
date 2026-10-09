@@ -39,7 +39,13 @@ export function TabbedCode({ label, snippets, prompt = false }: TabbedCodeProps)
               className={styles.tab}
             >
               {item.icon && (
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
                   <path d={item.icon} />
                 </svg>
               )}

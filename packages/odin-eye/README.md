@@ -144,42 +144,42 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
 ### Accessibility
 
-| Check | Severity |
-| --- | --- |
-| Button without accessible name | 🔴 |
-| Link without accessible name | 🔴 |
-| Image without alt text | 🔴 |
-| Form field without label | 🔴 |
-| Duplicate id | 🔴 |
-| Page without language (`<html lang>`) | 🔴 |
-| Page without title | 🔴 |
-| Skipped heading level | 🟡 |
-| Multiple `<h1>` headings | 🟡 |
+| Check                                 | Severity |
+| ------------------------------------- | -------- |
+| Button without accessible name        | 🔴       |
+| Link without accessible name          | 🔴       |
+| Image without alt text                | 🔴       |
+| Form field without label              | 🔴       |
+| Duplicate id                          | 🔴       |
+| Page without language (`<html lang>`) | 🔴       |
+| Page without title                    | 🔴       |
+| Skipped heading level                 | 🟡       |
+| Multiple `<h1>` headings              | 🟡       |
 
 ### SEO
 
-| Check | Severity |
-| --- | --- |
-| Missing meta description | 🔴 |
-| Missing viewport meta tag | 🔴 |
-| Page without `<h1>` | 🔴 |
-| Meta description length | 🟡 |
-| Page title length | 🟡 |
-| Missing canonical link | 🟡 |
-| Missing Open Graph tags | 🟡 |
-| Link without destination | 🟡 |
-| Generic link text ("click here", "read more") | 🟡 |
+| Check                                         | Severity |
+| --------------------------------------------- | -------- |
+| Missing meta description                      | 🔴       |
+| Missing viewport meta tag                     | 🔴       |
+| Page without `<h1>`                           | 🔴       |
+| Meta description length                       | 🟡       |
+| Page title length                             | 🟡       |
+| Missing canonical link                        | 🟡       |
+| Missing Open Graph tags                       | 🟡       |
+| Link without destination                      | 🟡       |
+| Generic link text ("click here", "read more") | 🟡       |
 
 ### UI and layout
 
-| Check | Severity |
-| --- | --- |
-| Element wider than the page (horizontal scroll) | 🔴 |
-| Broken image | 🔴 |
-| Distorted image | 🟡 |
-| Image larger than needed | 🟡 |
-| Touch target too small | 🟡 |
-| Text too small | 🟡 |
+| Check                                           | Severity |
+| ----------------------------------------------- | -------- |
+| Element wider than the page (horizontal scroll) | 🔴       |
+| Broken image                                    | 🔴       |
+| Distorted image                                 | 🟡       |
+| Image larger than needed                        | 🟡       |
+| Touch target too small                          | 🟡       |
+| Text too small                                  | 🟡       |
 
 ## How it works
 
@@ -191,14 +191,14 @@ OdinEye has no options yet: render it and it works.
 
 ## Compatibility
 
-| | |
-| --- | --- |
-| React | 18 and up |
-| Next.js | App Router and Pages Router |
-| Vite | React templates |
-| Remix / React Router | ✓ |
-| Gatsby | ✓ |
-| TypeScript | Types included |
+|                      |                             |
+| -------------------- | --------------------------- |
+| React                | 18 and up                   |
+| Next.js              | App Router and Pages Router |
+| Vite                 | React templates             |
+| Remix / React Router | ✓                           |
+| Gatsby               | ✓                           |
+| TypeScript           | Types included              |
 
 ## License
 
