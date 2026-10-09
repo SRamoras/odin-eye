@@ -1,12 +1,16 @@
-import { useState } from "react";
 import type { Issue } from "../types";
 import { Tooltip } from "./Tooltip";
 
-export function Highlight({ issue, element }: { issue: Issue; element: Element }) {
-  const [hovered, setHovered] = useState(false);
+interface HighlightProps {
+  issue: Issue;
+  element: Element;
+  hovered: boolean;
+}
 
+export function Highlight({ issue, element, hovered }: HighlightProps) {
   const rect = element.getBoundingClientRect();
   if (rect.width === 0 && rect.height === 0) return null;
+
   if (rect.bottom < 0 || rect.top > window.innerHeight) return null;
   if (rect.right < 0 || rect.left > window.innerWidth) return null;
 
@@ -22,8 +26,6 @@ export function Highlight({ issue, element }: { issue: Issue; element: Element }
       <div
         className="oe-badge"
         data-severity={issue.severity}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
         style={{ top: Math.max(rect.top - 8, 4), left: Math.max(rect.left - 8, 4) }}
       >
         !
