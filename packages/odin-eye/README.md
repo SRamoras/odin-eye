@@ -140,47 +140,45 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
 ## What it checks
 
-🔴 error · 🟡 warning
-
 ### Accessibility
 
 | Check                                 | Severity |
 | ------------------------------------- | -------- |
-| Button without accessible name        | 🔴       |
-| Link without accessible name          | 🔴       |
-| Image without alt text                | 🔴       |
-| Form field without label              | 🔴       |
-| Duplicate id                          | 🔴       |
-| Page without language (`<html lang>`) | 🔴       |
-| Page without title                    | 🔴       |
-| Skipped heading level                 | 🟡       |
-| Multiple `<h1>` headings              | 🟡       |
+| Button without accessible name        | Error    |
+| Link without accessible name          | Error    |
+| Image without alt text                | Error    |
+| Form field without label              | Error    |
+| Duplicate id                          | Error    |
+| Page without language (`<html lang>`) | Error    |
+| Page without title                    | Error    |
+| Skipped heading level                 | Warning  |
+| Multiple `<h1>` headings              | Warning  |
 
 ### SEO
 
 | Check                                         | Severity |
 | --------------------------------------------- | -------- |
-| Missing meta description                      | 🔴       |
-| Missing viewport meta tag                     | 🔴       |
-| Page without `<h1>`                           | 🔴       |
-| Meta description length                       | 🟡       |
-| Page title length                             | 🟡       |
-| Missing canonical link                        | 🟡       |
-| Missing Open Graph tags                       | 🟡       |
-| Link without destination                      | 🟡       |
-| Generic link text ("click here", "read more") | 🟡       |
-| Page is set to `noindex`                      | 🟡       |
+| Missing meta description                      | Error    |
+| Missing viewport meta tag                     | Error    |
+| Page without `<h1>`                           | Error    |
+| Meta description length                       | Warning  |
+| Page title length                             | Warning  |
+| Missing canonical link                        | Warning  |
+| Missing Open Graph tags                       | Warning  |
+| Link without destination                      | Warning  |
+| Generic link text ("click here", "read more") | Warning  |
+| Page is set to `noindex`                      | Warning  |
 
 ### UI and layout
 
 | Check                                           | Severity |
 | ----------------------------------------------- | -------- |
-| Element wider than the page (horizontal scroll) | 🔴       |
-| Broken image                                    | 🔴       |
-| Distorted image                                 | 🟡       |
-| Image larger than needed                        | 🟡       |
-| Touch target too small                          | 🟡       |
-| Text too small                                  | 🟡       |
+| Element wider than the page (horizontal scroll) | Error    |
+| Broken image                                    | Error    |
+| Distorted image                                 | Warning  |
+| Image larger than needed                        | Warning  |
+| Touch target too small                          | Warning  |
+| Text too small                                  | Warning  |
 
 ## How it works
 
