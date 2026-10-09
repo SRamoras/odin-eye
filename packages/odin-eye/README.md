@@ -136,7 +136,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 }
 ```
 
-> **Why the development check?** Installing with `-D` only records OdinEye as a dev dependency. If `<OdinEye />` is rendered without a check, it still ends up in your production bundle. The check is what keeps it out.
+> **Why the development check?** In production builds, `odin-eye` resolves to an empty component, so Next.js, Vite, Remix / React Router and Gatsby ship none of its code. The check also covers bundlers that don't support the `production` export condition, and makes the intent clear to anyone reading the code.
+
+### Showing it in production
+
+To run OdinEye in a production build on purpose, for a demo or a staging site, import it from `odin-eye/always`:
+
+```tsx
+import { OdinEye } from "odin-eye/always";
+```
 
 ## What it checks
 

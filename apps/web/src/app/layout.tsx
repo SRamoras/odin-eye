@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
-import { OdinEye } from "odin-eye";
+import { OdinEye } from "odin-eye/always";
 import "./globals.css";
 
 const sans = localFont({
