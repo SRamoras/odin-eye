@@ -10,6 +10,10 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "production": {
+        "import": "./dist/noop.js",
+        "require": "./dist/noop.cjs"
+      },
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
