@@ -71,7 +71,7 @@ Setup for Next.js (App and Pages Router), Vite, Remix / React Router and Gatsby 
 
 ## What it checks
 
-24 checks across three categories. 🔴 error · 🟡 warning
+25 checks across three categories. 🔴 error · 🟡 warning
 
 <details>
 <summary><b>Accessibility</b> (9)</summary>
@@ -91,7 +91,7 @@ Setup for Next.js (App and Pages Router), Vite, Remix / React Router and Gatsby 
 </details>
 
 <details>
-<summary><b>SEO</b> (9)</summary>
+<summary><b>SEO</b> (10)</summary>
 
 | Check                     |     |
 | ------------------------- | :-: |
@@ -104,6 +104,7 @@ Setup for Next.js (App and Pages Router), Vite, Remix / React Router and Gatsby 
 | Missing Open Graph tags   | 🟡  |
 | Link without destination  | 🟡  |
 | Generic link text         | 🟡  |
+| Page is set to noindex    | 🟡  |
 
 </details>
 

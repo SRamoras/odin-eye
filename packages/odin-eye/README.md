@@ -169,6 +169,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 | Missing Open Graph tags                       | 🟡       |
 | Link without destination                      | 🟡       |
 | Generic link text ("click here", "read more") | 🟡       |
+| Page is set to `noindex`                      | 🟡       |
 
 ### UI and layout
 
