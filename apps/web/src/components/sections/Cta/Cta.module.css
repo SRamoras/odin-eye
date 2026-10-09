@@ -18,7 +18,6 @@
   isolation: isolate;
 }
 
-/* pontos parados ao fundo, a desvanecer a partir do topo */
 .card::before {
   content: "";
   position: absolute;

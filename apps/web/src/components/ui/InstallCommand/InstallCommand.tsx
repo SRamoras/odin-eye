@@ -1,7 +1,6 @@
 import { CopyButton } from "../CopyButton";
 import styles from "./InstallCommand.module.css";
 
-/** O comando de instalação numa pílula, com botão de copiar. */
 export function InstallCommand({ command = "npm install -D odin-eye" }: { command?: string }) {
   return (
     <div role="group" aria-label="Install command" className={styles.install}>

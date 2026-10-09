@@ -1,4 +1,4 @@
-// Ícones do Simple Icons (CC0): https://simpleicons.org
+// Icons from Simple Icons (CC0): https://simpleicons.org
 
 export const PACKAGE_MANAGERS = [
   {

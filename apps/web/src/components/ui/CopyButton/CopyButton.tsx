@@ -6,9 +6,7 @@ import { CheckIcon, CopyIcon } from "../icons";
 import { VisuallyHidden } from "../VisuallyHidden";
 
 interface CopyButtonProps {
-  /** o texto que vai para a área de transferência */
   text: string;
-  /** nome do botão para leitores de ecrã */
   label: string;
   className?: string;
 }

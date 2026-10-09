@@ -1,4 +1,4 @@
-/* Adaptado da React Bits para as cores do site e para o modo claro. */
+/* Adapted from React Bits for the site colors and light mode. */
 
 .card-grid {
   display: grid;
@@ -111,7 +111,6 @@
   }
 }
 
-/* brilho na borda que segue o rato */
 .magic-bento-card--border-glow::after {
   content: '';
   position: absolute;
@@ -156,7 +155,6 @@
   z-index: -1;
 }
 
-/* luz que segue o rato por cima da grelha */
 .global-spotlight {
   will-change: transform, opacity;
   z-index: 200 !important;

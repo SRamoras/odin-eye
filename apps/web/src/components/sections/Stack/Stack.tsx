@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { STACK } from "@/data/stack";
@@ -15,7 +14,6 @@ export function Stack() {
       <ul className={styles.stack}>
         {STACK.map((item) => (
           <li key={item.name} className={styles.item}>
-            {/* o nome está logo ao lado, por isso o logótipo é decorativo */}
             <img
               src={item.logo}
               alt=""

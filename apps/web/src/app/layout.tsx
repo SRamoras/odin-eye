@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import { OdinEye } from "odin-eye";
 import "./globals.css";
 
-// fonte do site, em public/fonts
 const sans = localFont({
   src: "../../public/fonts/Geist-Regular.otf",
   weight: "400",
@@ -20,8 +19,6 @@ const title = "OdinEye: find page issues while you develop";
 const description =
   "OdinEye is a React dev tool that marks accessibility, SEO and layout problems on your page and explains how to fix each one.";
 
-// o site é escuro por defeito; só fica claro se o visitante o escolheu no botão.
-// corre antes da primeira pintura, para não haver um flash
 const themeScript = `try {
   document.documentElement.classList.toggle("dark", localStorage.getItem("odin-eye-theme") !== "light");
 } catch {}`;
@@ -42,7 +39,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
-        {/* neste site fica sempre ligado, para os visitantes o verem */}
         <OdinEye />
       </body>
     </html>

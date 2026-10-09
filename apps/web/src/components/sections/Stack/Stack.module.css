@@ -26,7 +26,6 @@
   margin-bottom: 16px;
 }
 
-/* Next.js e Remix são pretos: no modo escuro ficam brancos */
 :global(.dark) .logo[data-mono="true"] {
   filter: invert(1);
 }

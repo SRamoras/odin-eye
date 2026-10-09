@@ -40,7 +40,6 @@ export default function App() {
   },
 ];
 
-// o código é colorido no servidor; os dois temas seguem o claro/escuro do site
 function highlight(code: string, lang: "bash" | "tsx") {
   return codeToHtml(code, {
     lang,

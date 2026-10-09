@@ -25,14 +25,12 @@
   white-space: nowrap;
 }
 
-/* .bar à frente para ganhar ao tamanho base do Button */
 .bar .copy {
   width: 32px;
   height: 32px;
   margin-left: auto;
 }
 
-/* separadores */
 .tabs {
   display: flex;
   gap: 2px;
@@ -63,7 +61,6 @@
   color: var(--foreground);
 }
 
-/* código */
 .code {
   color: var(--foreground);
   padding: 16px 18px;
@@ -72,7 +69,6 @@
   overflow-x: auto;
 }
 
-/* cores do Shiki: cada palavra traz a cor dos dois temas em variáveis */
 .code :global(.shiki) {
   background: transparent !important;
   overflow-x: auto;

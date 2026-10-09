@@ -1,8 +1,5 @@
 import styles from "./MockPage.module.css";
 
-// Ilustração estática: uma mini página com um erro e um aviso marcados, como o
-// OdinEye os desenha. Não é o componente real.
-
 function Marker({ severity, inline = false, children }: { severity: "error" | "warning"; inline?: boolean; children: React.ReactNode }) {
   return (
     <div className={styles.marked} data-severity={severity} data-inline={inline || undefined}>

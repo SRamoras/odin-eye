@@ -5,9 +5,7 @@ type Size = "display" | "cta" | "section" | "card";
 type Tone = "default" | "muted";
 
 interface HeadingProps {
-  /** o elemento HTML; por defeito h2 */
   as?: Tag;
-  /** o tamanho visual, independente do nível do título */
   size?: Size;
   tone?: Tone;
   id?: string;

@@ -14,7 +14,6 @@
   padding-bottom: 0;
 }
 
-/* linha que liga os números dos passos */
 .step:not(:last-child)::before {
   content: "";
   position: absolute;

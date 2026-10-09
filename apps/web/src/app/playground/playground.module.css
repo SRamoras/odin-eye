@@ -64,7 +64,6 @@
   background: var(--muted);
 }
 
-/* groups */
 .group {
   scroll-margin-top: 56px;
   padding-block: 72px;
@@ -84,7 +83,6 @@
   margin-bottom: 20px;
 }
 
-/* controlos usados nos exemplos */
 .button {
   min-width: 36px;
   min-height: 36px;
