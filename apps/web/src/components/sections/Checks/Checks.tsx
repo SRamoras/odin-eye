@@ -26,6 +26,7 @@ const GROUPS: { name: string; checks: [string, Severity][] }[] = [
     name: "SEO",
     checks: [
       ["Missing meta description", "error"],
+      ["Meta description too short or too long", "warning"],
       ["Page without an h1", "error"],
       ["Missing viewport meta tag", "error"],
       ["Page title too short or too long", "warning"],
