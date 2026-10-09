@@ -9,6 +9,7 @@
 
 **See accessibility, SEO and layout problems on your page while you build it.**
 
+[![CI](https://github.com/SRamoras/odin-eye/actions/workflows/ci.yml/badge.svg)](https://github.com/SRamoras/odin-eye/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/odin-eye?color=111&label=npm)](https://www.npmjs.com/package/odin-eye)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/odin-eye?color=111&label=size)](https://bundlephobia.com/package/odin-eye)
 [![license](https://img.shields.io/github/license/SRamoras/odin-eye?color=111)](LICENSE)
