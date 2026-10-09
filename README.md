@@ -16,6 +16,10 @@
 
 [Website](https://odin-eye.vercel.app) · [Playground](https://odin-eye.vercel.app/playground) · [npm](https://www.npmjs.com/package/odin-eye) · [Report an issue](https://github.com/SRamoras/odin-eye/issues/new/choose)
 
+<br>
+
+<a href="https://odin-eye.vercel.app"><img src=".github/assets/demo.webp" alt="OdinEye marking issues on a live page" width="100%"></a>
+
 </div>
 
 ---

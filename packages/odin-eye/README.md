@@ -10,6 +10,10 @@
 
 [Website](https://odin-eye.vercel.app) · [Playground](https://odin-eye.vercel.app/playground) · [GitHub](https://github.com/SRamoras/odin-eye)
 
+<br>
+
+<a href="https://odin-eye.vercel.app"><img src="https://raw.githubusercontent.com/SRamoras/odin-eye/main/.github/assets/demo.webp" alt="OdinEye marking issues on a live page" width="100%"></a>
+
 </div>
 
 ---
