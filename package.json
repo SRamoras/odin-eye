@@ -5,7 +5,14 @@
     "packages/*",
     "apps/*"
   ],
+  "scripts": {
+    "build": "npm run build -w odin-eye && npm run build -w web",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "npm test -w odin-eye"
+  },
   "devDependencies": {
+    "prettier": "^3.9.9",
     "typescript": "^5.9.3"
   }
 }

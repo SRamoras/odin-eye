@@ -27,6 +27,7 @@ body:
         - Missing Open Graph tags
         - Link without destination
         - Generic link text
+        - Page is set to noindex
         - Element wider than the page
         - Broken image
         - Distorted image

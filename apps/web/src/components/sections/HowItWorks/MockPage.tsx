@@ -1,6 +1,14 @@
 import styles from "./MockPage.module.css";
 
-function Marker({ severity, inline = false, children }: { severity: "error" | "warning"; inline?: boolean; children: React.ReactNode }) {
+function Marker({
+  severity,
+  inline = false,
+  children,
+}: {
+  severity: "error" | "warning";
+  inline?: boolean;
+  children: React.ReactNode;
+}) {
   return (
     <div className={styles.marked} data-severity={severity} data-inline={inline || undefined}>
       <span className={styles.dot}>!</span>

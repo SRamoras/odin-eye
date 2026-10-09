@@ -22,8 +22,12 @@ export function Stack() {
               className={styles.logo}
               data-mono={"mono" in item ? "true" : undefined}
             />
-            <Text as="span" tone="foreground" className={styles.name}>{item.name}</Text>
-            <Text as="span" size="sm" tone="muted">{item.note}</Text>
+            <Text as="span" tone="foreground" className={styles.name}>
+              {item.name}
+            </Text>
+            <Text as="span" size="sm" tone="muted">
+              {item.note}
+            </Text>
           </li>
         ))}
       </ul>

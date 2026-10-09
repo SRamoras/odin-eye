@@ -50,13 +50,27 @@ function highlight(code: string, lang: "bash" | "tsx") {
 
 const iconFor = (name: string) => STACK.find((item) => item.name === name)?.path;
 
-function Step({ number, title, text, children }: { number: number; title: string; text: string; children: React.ReactNode }) {
+function Step({
+  number,
+  title,
+  text,
+  children,
+}: {
+  number: number;
+  title: string;
+  text: string;
+  children: React.ReactNode;
+}) {
   return (
     <li className={styles.step}>
-      <span className={styles.number} aria-hidden="true">{number}</span>
+      <span className={styles.number} aria-hidden="true">
+        {number}
+      </span>
       <div className={styles.body}>
         <div className={styles.text}>
-          <Heading as="h3" size="card">{title}</Heading>
+          <Heading as="h3" size="card">
+            {title}
+          </Heading>
           <Text>{text}</Text>
         </div>
         {children}
@@ -73,7 +87,7 @@ export async function Setup() {
       icon: pm.path,
       code: pm.command,
       html: await highlight(pm.command, "bash"),
-    }))
+    })),
   );
 
   const frameworks: Snippet[] = await Promise.all(
@@ -83,7 +97,7 @@ export async function Setup() {
       icon: iconFor(fw.name),
       code: fw.code,
       html: await highlight(fw.code, "tsx"),
-    }))
+    })),
   );
 
   return (

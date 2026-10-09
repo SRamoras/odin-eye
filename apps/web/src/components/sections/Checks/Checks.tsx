@@ -60,16 +60,24 @@ export function Checks() {
       lead="A first pass while you write the code, not a full audit. Errors will break the page for some people; warnings are worth a second look."
     >
       <ul className={styles.legend} aria-label="Severity">
-        <li><SeverityDot severity="error" /> Error</li>
-        <li><SeverityDot severity="warning" /> Warning</li>
+        <li>
+          <SeverityDot severity="error" /> Error
+        </li>
+        <li>
+          <SeverityDot severity="warning" /> Warning
+        </li>
       </ul>
 
       <div className={styles.grid}>
         {GROUPS.map((group) => (
           <Card key={group.name} spotlight>
             <header className={styles.header}>
-              <Heading as="h3" size="card">{group.name}</Heading>
-              <Text as="span" size="xs" tone="muted" mono uppercase>{group.checks.length} checks</Text>
+              <Heading as="h3" size="card">
+                {group.name}
+              </Heading>
+              <Text as="span" size="xs" tone="muted" mono uppercase>
+                {group.checks.length} checks
+              </Text>
             </header>
             <ul className={styles.list}>
               {group.checks.map(([check, severity]) => (

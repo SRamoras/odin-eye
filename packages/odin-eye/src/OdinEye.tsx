@@ -7,8 +7,18 @@ import { ensureStyles } from "./styles";
 import { Logo } from "./Logo";
 
 const WATCHED_ATTRIBUTES = [
-  "alt", "aria-label", "aria-labelledby", "content", "href", "id",
-  "lang", "name", "rel", "src", "title", "for",
+  "alt",
+  "aria-label",
+  "aria-labelledby",
+  "content",
+  "href",
+  "id",
+  "lang",
+  "name",
+  "rel",
+  "src",
+  "title",
+  "for",
 ];
 
 const BADGE_OFFSET = 8;
@@ -150,7 +160,7 @@ export function OdinEye() {
               element={issue.element}
               hovered={issue === hovered}
             />
-          )
+          ),
       )}
 
       {open && <Panel issues={issues} onClose={() => setOpen(false)} />}

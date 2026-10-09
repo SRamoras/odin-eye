@@ -13,8 +13,14 @@ interface BaseProps {
   children: ReactNode;
 }
 
-type LinkButtonProps = BaseProps & { href: string } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseProps | "href">;
-type NativeButtonProps = BaseProps & { href?: undefined } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps>;
+type LinkButtonProps = BaseProps & { href: string } & Omit<
+    AnchorHTMLAttributes<HTMLAnchorElement>,
+    keyof BaseProps | "href"
+  >;
+type NativeButtonProps = BaseProps & { href?: undefined } & Omit<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    keyof BaseProps
+  >;
 
 export type ButtonProps = LinkButtonProps | NativeButtonProps;
 

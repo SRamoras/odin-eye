@@ -31,7 +31,16 @@ export function Panel({ issues, onClose }: { issues: Issue[]; onClose: () => voi
           </span>
         </div>
         <button className="oe-close" onClick={onClose} aria-label="Close">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            aria-hidden="true"
+          >
             <path d="M18 6 6 18M6 6l12 12" />
           </svg>
         </button>
@@ -62,9 +71,7 @@ export function Panel({ issues, onClose }: { issues: Issue[]; onClose: () => voi
             className="oe-item"
             data-severity={issue.severity}
             data-page={issue.element ? undefined : ""}
-            onClick={() =>
-              issue.element?.scrollIntoView({ behavior: "smooth", block: "center" })
-            }
+            onClick={() => issue.element?.scrollIntoView({ behavior: "smooth", block: "center" })}
           >
             <span className="oe-dot" />
             <span>

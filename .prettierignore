@@ -1,0 +1,7 @@
+node_modules
+dist
+.next
+package-lock.json
+apps/web/src/components/reactbits
+*.webp
+*.mp4

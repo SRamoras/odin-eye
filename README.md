@@ -9,8 +9,8 @@
 
 **See accessibility, SEO and layout problems on your page while you build it.**
 
+[![CI](https://github.com/SRamoras/odin-eye/actions/workflows/ci.yml/badge.svg)](https://github.com/SRamoras/odin-eye/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/odin-eye?color=111&label=npm)](https://www.npmjs.com/package/odin-eye)
-[![npm downloads](https://img.shields.io/npm/dm/odin-eye?color=111)](https://www.npmjs.com/package/odin-eye)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/odin-eye?color=111&label=size)](https://bundlephobia.com/package/odin-eye)
 [![license](https://img.shields.io/github/license/SRamoras/odin-eye?color=111)](LICENSE)
 
@@ -24,19 +24,19 @@
 
 ---
 
-Most audit tools give you a report after the fact: a score, a list of selectors, a tab you have to switch to. OdinEye puts the problem **on the element itself**, in your running app, while you are still writing the code.
+OdinEye is a React component that checks the page you are working on and marks problems on the elements that have them: an image without alt text, a button without a name, an element that makes the page scroll sideways. Hover a marked element to see what is wrong and how to fix it, or open the panel to see everything at once.
 
-Add one component. Every image without alt text, every button without a name, every element that makes the page scroll sideways gets outlined, and hovering it tells you what is wrong and how to fix it.
+It runs in your app during development, so you see issues while you write the code instead of in an audit afterwards.
 
 ## Features
 
-- 🎯 **On the page, not in a report.** Problems are outlined where they are, with a badge on each one.
-- 💬 **Explains the fix.** Hover a marked element to read what is wrong and what to change.
-- 📋 **One panel for everything.** All issues in one list, filtered by category. Click one to scroll to it.
-- 🔄 **Keeps up with your app.** Checks run again on route changes, new content and late-loading images.
-- 🪶 **Zero config.** No options, no setup files, no browser extension.
-- 🧱 **Stays out of the way.** The page stays clickable and the overlay's styles are scoped, so they never touch yours.
-- ⚡ **SSR safe.** Renders nothing on the server and starts in the browser.
+- Issues are outlined on the page, with a badge on each element.
+- Hovering a marked element explains the problem and the fix.
+- A panel lists every issue by category. Clicking one scrolls to it.
+- Checks run again after route changes, DOM updates and image loads.
+- No configuration and no browser extension.
+- Renders nothing on the server, so it works with SSR and static generation.
+- The overlay's styles are scoped and the page stays clickable.
 
 ## Quick start
 
@@ -65,59 +65,60 @@ Setup for Next.js (App and Pages Router), Vite, Remix / React Router and Gatsby 
 
 ## Works with
 
-| React | Next.js | Vite | Remix / React Router | Gatsby | TypeScript |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| 18 and up | App and Pages Router | React templates | ✓ | ✓ | Types included |
+|   React   |       Next.js        |      Vite       | Remix / React Router | Gatsby |   TypeScript   |
+| :-------: | :------------------: | :-------------: | :------------------: | :----: | :------------: |
+| 18 and up | App and Pages Router | React templates |          ✓           |   ✓    | Types included |
 
 ## What it checks
 
-24 checks across three categories. 🔴 error · 🟡 warning
+25 checks across three categories.
 
 <details>
 <summary><b>Accessibility</b> (9)</summary>
 
-| Check | |
-| --- | :---: |
-| Button without accessible name | 🔴 |
-| Link without accessible name | 🔴 |
-| Image without alt text | 🔴 |
-| Form field without label | 🔴 |
-| Duplicate id | 🔴 |
-| Page without language | 🔴 |
-| Page without title | 🔴 |
-| Skipped heading level | 🟡 |
-| Multiple `<h1>` headings | 🟡 |
+| Check                          | Severity |
+| ------------------------------ | :------: |
+| Button without accessible name |  Error   |
+| Link without accessible name   |  Error   |
+| Image without alt text         |  Error   |
+| Form field without label       |  Error   |
+| Duplicate id                   |  Error   |
+| Page without language          |  Error   |
+| Page without title             |  Error   |
+| Skipped heading level          | Warning  |
+| Multiple `<h1>` headings       | Warning  |
 
 </details>
 
 <details>
-<summary><b>SEO</b> (9)</summary>
+<summary><b>SEO</b> (10)</summary>
 
-| Check | |
-| --- | :---: |
-| Missing meta description | 🔴 |
-| Missing viewport meta tag | 🔴 |
-| Page without `<h1>` | 🔴 |
-| Meta description length | 🟡 |
-| Page title length | 🟡 |
-| Missing canonical link | 🟡 |
-| Missing Open Graph tags | 🟡 |
-| Link without destination | 🟡 |
-| Generic link text | 🟡 |
+| Check                     | Severity |
+| ------------------------- | :------: |
+| Missing meta description  |  Error   |
+| Missing viewport meta tag |  Error   |
+| Page without `<h1>`       |  Error   |
+| Meta description length   | Warning  |
+| Page title length         | Warning  |
+| Missing canonical link    | Warning  |
+| Missing Open Graph tags   | Warning  |
+| Link without destination  | Warning  |
+| Generic link text         | Warning  |
+| Page is set to noindex    | Warning  |
 
 </details>
 
 <details>
 <summary><b>UI and layout</b> (6)</summary>
 
-| Check | |
-| --- | :---: |
-| Element wider than the page | 🔴 |
-| Broken image | 🔴 |
-| Distorted image | 🟡 |
-| Image larger than needed | 🟡 |
-| Touch target too small | 🟡 |
-| Text too small | 🟡 |
+| Check                       | Severity |
+| --------------------------- | :------: |
+| Element wider than the page |  Error   |
+| Broken image                |  Error   |
+| Distorted image             | Warning  |
+| Image larger than needed    | Warning  |
+| Touch target too small      | Warning  |
+| Text too small              | Warning  |
 
 </details>
 

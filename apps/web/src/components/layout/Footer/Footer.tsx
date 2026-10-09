@@ -31,26 +31,35 @@ export function Footer() {
         <div className={styles.about}>
           <Brand logoSize={22} />
           <Text tone="muted">
-            A React dev tool that marks accessibility, SEO and layout problems on your
-            page while you build it.
+            A React dev tool that marks accessibility, SEO and layout problems on your page while
+            you build it.
           </Text>
           <Text size="md" tone="muted">
             MIT licensed. Built by{" "}
-            <a href="https://diogo-silva-portfolio.vercel.app" className={styles.author}>Diogo Silva</a>.
+            <a href="https://diogo-silva-portfolio.vercel.app" className={styles.author}>
+              Diogo Silva
+            </a>
+            .
           </Text>
         </div>
 
         <nav aria-label="Footer" className={styles.nav}>
           {COLUMNS.map((column) => (
             <div key={column.title} className={styles.column}>
-              <Text size="md" tone="foreground" weight="medium">{column.title}</Text>
+              <Text size="md" tone="foreground" weight="medium">
+                {column.title}
+              </Text>
               <ul>
                 {column.links.map((link) => (
                   <li key={link.href}>
                     {link.href.startsWith("/") ? (
-                      <Link href={link.href} className={styles.link}>{link.label}</Link>
+                      <Link href={link.href} className={styles.link}>
+                        {link.label}
+                      </Link>
                     ) : (
-                      <a href={link.href} className={styles.link}>{link.label}</a>
+                      <a href={link.href} className={styles.link}>
+                        {link.label}
+                      </a>
                     )}
                   </li>
                 ))}
