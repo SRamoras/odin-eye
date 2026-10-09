@@ -1,6 +1,5 @@
+import { Logo } from "@/components/ui/Logo";
 import styles from "./MockPanel.module.css";
-
-// Ilustração estática do painel do OdinEye e do botão do canto que o abre.
 
 const ROWS = [
   { title: "Button without a name", severity: "error" },
@@ -13,21 +12,38 @@ export function MockPanel() {
   return (
     <div className={styles.stage}>
       <div className={styles.panel}>
-        <div className={styles.tabs}>
-          <span data-active="true">All 7</span>
-          <span>Accessibility 4</span>
-          <span>SEO 3</span>
+        <div className={styles.header}>
+          <Logo size={16} />
+          OdinEye <span>7 issues</span>
         </div>
-        {ROWS.map((row) => (
-          <div key={row.title} className={styles.row} data-severity={row.severity}>
-            {row.title}
-          </div>
-        ))}
+        <div className={styles.tabs}>
+          <span data-active="true">
+            All <b>7</b>
+          </span>
+          <span>
+            Accessibility <b>4</b>
+          </span>
+          <span>
+            SEO <b>3</b>
+          </span>
+        </div>
+        <div className={styles.list}>
+          {ROWS.map((row) => (
+            <div key={row.title} className={styles.row} data-severity={row.severity}>
+              <i className={styles.dot} />
+              {row.title}
+            </div>
+          ))}
+        </div>
       </div>
       <span className={styles.counter}>
-        <span>👁️</span>
-        <span className={styles.errors}>● 4</span>
-        <span className={styles.warnings}>● 3</span>
+        <Logo size={16} />
+        <span data-severity="error">
+          <i className={styles.dot} />4
+        </span>
+        <span data-severity="warning">
+          <i className={styles.dot} />3
+        </span>
       </span>
     </div>
   );
