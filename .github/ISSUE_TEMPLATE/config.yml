@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://odin-eye.vercel.app
+    about: Setup for each framework and the full list of checks.
+  - name: Playground
+    url: https://odin-eye.vercel.app/playground
+    about: See every check in action before reporting.

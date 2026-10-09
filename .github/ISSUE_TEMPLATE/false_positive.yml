@@ -1,0 +1,82 @@
+name: False positive
+description: OdinEye flagged something that is actually fine.
+title: "[False positive]: "
+labels: ["false positive"]
+body:
+  - type: dropdown
+    id: check
+    attributes:
+      label: Which check?
+      description: The title shown in the panel or tooltip.
+      options:
+        - Button without accessible name
+        - Link without accessible name
+        - Image without alt text
+        - Form field without label
+        - Duplicate id
+        - Page without language
+        - Page without title
+        - Skipped heading level
+        - Multiple <h1> headings
+        - Missing meta description
+        - Meta description length
+        - Missing viewport meta tag
+        - Page without <h1>
+        - Page title length
+        - Missing canonical link
+        - Missing Open Graph tags
+        - Link without destination
+        - Generic link text
+        - Element wider than the page
+        - Broken image
+        - Distorted image
+        - Image larger than needed
+        - Touch target too small
+        - Text too small
+    validations:
+      required: true
+  - type: textarea
+    id: html
+    attributes:
+      label: HTML of the flagged element
+      description: In devtools, right click the element → Copy → Copy outerHTML. Trim it if it is long.
+      render: html
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is this not a problem?
+      description: For example, the button has a name from aria-labelledby, or the image is decorative.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: OdinEye version
+      placeholder: "0.4.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Framework
+      options:
+        - Next.js (App Router)
+        - Next.js (Pages Router)
+        - Vite
+        - Remix / React Router
+        - Gatsby
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: react
+    attributes:
+      label: React version
+      placeholder: "19.1.0"
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: "Chrome 141, Firefox 143, Safari 26…"
