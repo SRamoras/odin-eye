@@ -4,6 +4,7 @@ import { Highlight } from "./overlay/Highlight";
 import { Panel } from "./panel/Panel";
 import { runAllChecks } from "./checks";
 import { ensureStyles } from "./styles";
+import { Logo } from "./Logo";
 
 const WATCHED_ATTRIBUTES = [
   "alt", "aria-label", "aria-labelledby", "content", "href", "id",
@@ -160,10 +161,7 @@ export function OdinEye() {
         aria-expanded={open}
         aria-label={`OdinEye: ${errors} errors, ${warnings} warnings`}
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
-          <circle cx="12" cy="12" r="3" />
-        </svg>
+        <Logo size={18} />
         <span className="oe-count" data-severity="error">
           <span className="oe-dot" />
           {errors}

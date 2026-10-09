@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { Category, Issue } from "../types";
+import { Logo } from "../Logo";
 
 const LABELS: Record<Category, string> = {
   accessibility: "Accessibility",
@@ -23,6 +24,7 @@ export function Panel({ issues, onClose }: { issues: Issue[]; onClose: () => voi
     <div className="oe-panel" role="dialog" aria-label="OdinEye issues">
       <div className="oe-header">
         <div className="oe-brand">
+          <Logo size={18} />
           OdinEye
           <span>
             {issues.length} {issues.length === 1 ? "issue" : "issues"}
