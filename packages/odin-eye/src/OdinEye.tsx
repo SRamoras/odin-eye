@@ -8,6 +8,7 @@ export function OdinEye() {
   const [mounted, setMounted] = useState(false);
   const [issues, setIssues] = useState<Issue[]>([]);
   const [open, setOpen] = useState(false);
+  const [, setFrame] = useState(0);
 
   useEffect(() => {
     setMounted(true);
@@ -18,6 +19,29 @@ export function OdinEye() {
     // volta a analisar quando as imagens acabarem de carregar
     window.addEventListener("load", run);
     return () => window.removeEventListener("load", run);
+  }, []);
+
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        setFrame((value) => value + 1);
+      });
+    };
+
+    const resizeObserver = new ResizeObserver(update);
+    resizeObserver.observe(document.body);
+    window.addEventListener("scroll", update, { capture: true, passive: true });
+    window.addEventListener("resize", update, { passive: true });
+
+    return () => {
+      cancelAnimationFrame(frame);
+      resizeObserver.disconnect();
+      window.removeEventListener("scroll", update, { capture: true });
+      window.removeEventListener("resize", update);
+    };
   }, []);
 
   if (!mounted) return null;

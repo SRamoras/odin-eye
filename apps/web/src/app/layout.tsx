@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { OdinEye } from "odin-eye";
-import { MarkerSync } from "@/components/layout/MarkerSync";
 import "./globals.css";
 
 // fonte do site, em public/fonts
@@ -43,7 +42,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
-        <MarkerSync />
         {/* neste site fica sempre ligado, para os visitantes o verem */}
         <OdinEye />
       </body>

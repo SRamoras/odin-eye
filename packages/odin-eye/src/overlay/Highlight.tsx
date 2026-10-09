@@ -1,27 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { Issue } from "../types";
 import { Tooltip } from "./Tooltip";
 
 const COLORS = { error: "#ef4444", warning: "#f59e0b" };
 
 export function Highlight({ issue, element }: { issue: Issue; element: Element }) {
-  const [rect, setRect] = useState<DOMRect | null>(null);
   const [hovered, setHovered] = useState(false);
 
-  useEffect(() => {
-    const update = () => setRect(element.getBoundingClientRect());
-
-    update();
-    window.addEventListener("scroll", update, true);
-    window.addEventListener("resize", update);
-
-    return () => {
-      window.removeEventListener("scroll", update, true);
-      window.removeEventListener("resize", update);
-    };
-  }, [element]);
-
-  if (!rect || (rect.width === 0 && rect.height === 0)) return null;
+  const rect = element.getBoundingClientRect();
+  if (rect.width === 0 && rect.height === 0) return null;
+  if (rect.bottom < 0 || rect.top > window.innerHeight) return null;
+  if (rect.right < 0 || rect.left > window.innerWidth) return null;
 
   const color = COLORS[issue.severity];
 
