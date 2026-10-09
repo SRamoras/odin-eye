@@ -1,6 +1,6 @@
 {
   "name": "odin-eye",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Find accessibility, SEO and layout issues directly on your page while you develop",
   "type": "module",
   "main": "./dist/index.cjs",
