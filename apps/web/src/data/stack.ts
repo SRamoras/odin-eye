@@ -1,6 +1,5 @@
-// logo: versão a cores do Devicon (MIT), em public/icons. https://devicon.dev
-// mono: logótipo preto, invertido no modo escuro.
-// path: ícone de uma cor do Simple Icons (CC0), usado nos separadores do Setup. https://simpleicons.org
+// logo: color version from Devicon (MIT), in public/icons. https://devicon.dev
+// path: single-color icon from Simple Icons (CC0), used in the Setup tabs. https://simpleicons.org
 
 export const STACK = [
   {

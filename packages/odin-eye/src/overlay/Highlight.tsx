@@ -1,72 +1,36 @@
-import { useEffect, useState } from "react";
 import type { Issue } from "../types";
 import { Tooltip } from "./Tooltip";
 
-const COLORS = { error: "#ef4444", warning: "#f59e0b" };
+interface HighlightProps {
+  issue: Issue;
+  element: Element;
+  hovered: boolean;
+}
 
-export function Highlight({ issue, element }: { issue: Issue; element: Element }) {
-  const [rect, setRect] = useState<DOMRect | null>(null);
-  const [hovered, setHovered] = useState(false);
+export function Highlight({ issue, element, hovered }: HighlightProps) {
+  const rect = element.getBoundingClientRect();
+  if (rect.width === 0 && rect.height === 0) return null;
 
-  useEffect(() => {
-    const update = () => setRect(element.getBoundingClientRect());
-
-    update();
-    window.addEventListener("scroll", update, true);
-    window.addEventListener("resize", update);
-
-    return () => {
-      window.removeEventListener("scroll", update, true);
-      window.removeEventListener("resize", update);
-    };
-  }, [element]);
-
-  if (!rect || (rect.width === 0 && rect.height === 0)) return null;
-
-  const color = COLORS[issue.severity];
+  if (rect.top > window.innerHeight || rect.left > window.innerWidth) return null;
 
   return (
     <>
       <div
-        style={{
-          position: "fixed",
-          top: rect.top,
-          left: rect.left,
-          width: rect.width,
-          height: rect.height,
-          border: `2px solid ${color}`,
-          background: hovered ? `${color}22` : "transparent",
-          borderRadius: 4,
-          pointerEvents: "none",
-          zIndex: 2147483645,
-        }}
+        className="oe-box"
+        data-severity={issue.severity}
+        data-hovered={hovered ? "" : undefined}
+        style={{ top: rect.top, left: rect.left, width: rect.width, height: rect.height }}
       />
 
       <div
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        style={{
-          position: "fixed",
-          top: Math.max(rect.top - 8, 4),
-          left: Math.max(rect.left - 8, 4),
-          width: 16,
-          height: 16,
-          borderRadius: "50%",
-          background: color,
-          color: "#fff",
-          fontFamily: "system-ui, sans-serif",
-          fontSize: 11,
-          fontWeight: 700,
-          lineHeight: "16px",
-          textAlign: "center",
-          cursor: "help",
-          zIndex: 2147483646,
-        }}
+        className="oe-badge"
+        data-severity={issue.severity}
+        style={{ top: Math.max(rect.top - 8, 4), left: Math.max(rect.left - 8, 4) }}
       >
         !
       </div>
 
-      {hovered && <Tooltip issue={issue} rect={rect} color={color} />}
+      {hovered && <Tooltip issue={issue} rect={rect} />}
     </>
   );
 }

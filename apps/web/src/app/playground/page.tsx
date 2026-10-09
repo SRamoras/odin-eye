@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element, jsx-a11y/alt-text */
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/layout/Footer";
@@ -11,8 +10,8 @@ import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
 import styles from "./playground.module.css";
 
-// Esta página tem erros DE PROPÓSITO, para mostrar cada verificação a disparar.
-// Cada exemplo errado está ao lado da versão certa. Não os corrijas.
+// This page has mistakes ON PURPOSE, to show every check firing.
+// Each wrong example sits next to the right version. Do not fix them.
 
 export const metadata: Metadata = {
   title: "Playground: OdinEye with mistakes on purpose",
@@ -59,8 +58,6 @@ export default function Playground() {
             </nav>
           </div>
 
-          {/* ───────────── ACCESSIBILITY ───────────── */}
-
           <section id="accessibility" className={styles.group}>
             <Heading>Accessibility</Heading>
 
@@ -102,12 +99,9 @@ export default function Playground() {
               </Example>
 
               <Example title="Headings" text="One h1 per page, and no skipped levels on the way down.">
-                {/* segundo h1 na página */}
                 <h1 className={styles.demoHeading}>Second main title</h1>
                 <h2 className={styles.demoHeading}>Section</h2>
-                {/* salta de h2 para h4 */}
                 <h4 className={styles.demoHeading}>Subsection, skips h3</h4>
-                {/* salta de h4 para h6 */}
                 <h6 className={styles.demoHeading}>Deep subsection, skips h5</h6>
               </Example>
 
@@ -125,8 +119,6 @@ export default function Playground() {
               </Example>
             </div>
           </section>
-
-          {/* ───────────── SEO ───────────── */}
 
           <section id="seo" className={styles.group}>
             <Heading>SEO</Heading>
@@ -151,8 +143,6 @@ export default function Playground() {
               </Example>
             </div>
           </section>
-
-          {/* ───────────── UI ───────────── */}
 
           <section id="layout" className={styles.group}>
             <Heading>Layout</Heading>

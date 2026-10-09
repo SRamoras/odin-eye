@@ -6,7 +6,6 @@ import { InstallCommand } from "@/components/ui/InstallCommand";
 import { Text } from "@/components/ui/Text";
 import styles from "./Hero.module.css";
 
-// Caminho do vídeo em public/. Se for null, aparece só o espaço reservado.
 const HERO_VIDEO: string | null = "/videos/hero.mp4";
 
 export function Hero() {
@@ -32,7 +31,6 @@ export function Hero() {
 
         <div className={styles.media}>
           {HERO_VIDEO ? (
-            // Sem controlos e sem eventos de rato: o vídeo só corre em loop.
             <video
               src={HERO_VIDEO}
               autoPlay

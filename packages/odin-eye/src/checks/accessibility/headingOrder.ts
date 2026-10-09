@@ -7,9 +7,8 @@ export function checkHeadingOrder(): Issue[] {
     let previousLevel: number | null = null;
 
     headings.forEach((heading, index) => {
-        const level = Number(heading.tagName[1]); // "H3" → 3
+        const level = Number(heading.tagName[1]);
 
-        // erro quando salta níveis ao descer, por exemplo de h2 para h4
         if (previousLevel !== null && level > previousLevel + 1) {
         issues.push({
             id: `heading-order-${index}`,

@@ -4,12 +4,10 @@ import styles from "./Example.module.css";
 
 interface ExampleProps {
   title: string;
-  /** a regra em uma frase */
   text: string;
   children: React.ReactNode;
 }
 
-/** Cartão do playground: título, regra e os exemplos por baixo. */
 export function Example({ title, text, children }: ExampleProps) {
   return (
     <article className={styles.example}>

@@ -1,0 +1,67 @@
+name: Bug report
+description: Something is broken, like the panel, the markers or the page itself.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. If OdinEye flagged something that is fine, or missed a real problem, use the **False positive** or **Missed issue** templates instead.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Add <OdinEye /> to ...
+        2. Open the page and ...
+        3. See ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: OdinEye version
+      placeholder: "0.4.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Framework
+      options:
+        - Next.js (App Router)
+        - Next.js (Pages Router)
+        - Vite
+        - Remix / React Router
+        - Gatsby
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: react
+    attributes:
+      label: React version
+      placeholder: "19.1.0"
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: "Chrome 141, Firefox 143, Safari 26…"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console errors
+      description: Anything from the browser console, if there is any.
+      render: shell
+  - type: input
+    id: link
+    attributes:
+      label: Reproduction link
+      description: A public repo, StackBlitz or CodeSandbox makes this much faster to fix.

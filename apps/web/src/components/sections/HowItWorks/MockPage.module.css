@@ -54,7 +54,6 @@
   background: var(--foreground);
 }
 
-/* contorno e "!" como os do OdinEye */
 .marked {
   position: relative;
   padding: 6px;

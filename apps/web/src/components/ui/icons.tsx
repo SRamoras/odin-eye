@@ -1,6 +1,3 @@
-// Ícones usados em mais do que um sítio. São decorativos: quem os usa dá o nome
-// ao botão ou ao link (texto visível ou aria-label).
-
 interface IconProps {
   size?: number;
   className?: string;

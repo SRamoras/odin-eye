@@ -5,5 +5,7 @@ export default defineConfig({
   format: ["esm", "cjs"],
   dts: true,
   clean: true,
+  // a fonte vai dentro do bundle, para funcionar em qualquer site sem configuração
+  loader: { ".otf": "dataurl" },
   banner: { js: '"use client";' },
 });

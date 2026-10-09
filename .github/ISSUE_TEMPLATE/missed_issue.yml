@@ -1,0 +1,50 @@
+name: Missed issue
+description: There is a real problem on the page that OdinEye did not flag.
+title: "[Missed issue]: "
+labels: ["missed issue"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is the problem?
+      description: What should OdinEye have flagged, and which existing check (if any) should have caught it?
+    validations:
+      required: true
+  - type: textarea
+    id: html
+    attributes:
+      label: HTML of the element
+      description: In devtools, right click the element → Copy → Copy outerHTML. Trim it if it is long.
+      render: html
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: OdinEye version
+      placeholder: "0.4.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Framework
+      options:
+        - Next.js (App Router)
+        - Next.js (Pages Router)
+        - Vite
+        - Remix / React Router
+        - Gatsby
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: react
+    attributes:
+      label: React version
+      placeholder: "19.1.0"
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: "Chrome 141, Firefox 143, Safari 26…"

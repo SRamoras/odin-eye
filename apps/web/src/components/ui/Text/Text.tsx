@@ -1,17 +1,14 @@
 import styles from "./Text.module.css";
 
 type Tag = "p" | "span" | "div" | "li";
-/** xs 12px · sm 13px · md 14px · lg 15px · xl 16px · 2xl 18px */
 type Size = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 type Tone = "inherit" | "foreground" | "muted" | "faint";
 
 interface TextProps {
   as?: Tag;
-  /** sem tamanho, herda o do pai */
   size?: Size;
   tone?: Tone;
   weight?: "regular" | "medium";
-  /** fonte mono, para rótulos e código */
   mono?: boolean;
   uppercase?: boolean;
   id?: string;

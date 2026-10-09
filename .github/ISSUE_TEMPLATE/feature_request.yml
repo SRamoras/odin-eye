@@ -1,0 +1,29 @@
+name: Feature request
+description: Suggest a new check or an improvement.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of idea?
+      options:
+        - New check
+        - Panel or overlay
+        - Configuration
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Describe it
+      description: What should OdinEye do, and what problem does it solve for you?
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Example
+      description: For a new check, a snippet of HTML that should be flagged and one that should pass.
+      render: html

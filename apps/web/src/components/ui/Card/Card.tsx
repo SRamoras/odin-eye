@@ -2,7 +2,6 @@ import SpotlightCard from "../../reactbits/SpotlightCard";
 import styles from "./Card.module.css";
 
 interface CardProps {
-  /** luz suave que segue o rato (SpotlightCard da React Bits) */
   spotlight?: boolean;
   className?: string;
   children: React.ReactNode;

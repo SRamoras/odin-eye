@@ -8,7 +8,6 @@ type Size = "md" | "lg";
 interface BaseProps {
   variant?: Variant;
   size?: Size;
-  /** botão quadrado só com ícone; precisa de aria-label */
   iconOnly?: boolean;
   className?: string;
   children: ReactNode;
@@ -19,10 +18,6 @@ type NativeButtonProps = BaseProps & { href?: undefined } & Omit<ButtonHTMLAttri
 
 export type ButtonProps = LinkButtonProps | NativeButtonProps;
 
-/**
- * Botão em pílula. Com `href` é um link (interno com o Link do Next, externo com <a>);
- * sem `href` é um <button>.
- */
 export function Button(props: ButtonProps) {
   const { variant = "ghost", size = "md", iconOnly = false, className, children, ...rest } = props;
 
