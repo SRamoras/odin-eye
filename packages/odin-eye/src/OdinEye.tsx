@@ -4,6 +4,14 @@ import { Highlight } from "./overlay/Highlight";
 import { Panel } from "./panel/Panel";
 import { runAllChecks } from "./checks";
 
+const WATCHED_ATTRIBUTES = [
+  "alt", "aria-label", "aria-labelledby", "content", "href", "id",
+  "lang", "name", "rel", "src", "title", "for",
+];
+
+const isOwnNode = (node: Node) =>
+  (node instanceof Element ? node : node.parentElement)?.closest("[data-odin-eye]") != null;
+
 export function OdinEye() {
   const [mounted, setMounted] = useState(false);
   const [issues, setIssues] = useState<Issue[]>([]);
@@ -15,10 +23,40 @@ export function OdinEye() {
 
     const run = () => setIssues(runAllChecks());
 
+    let timer = 0;
+    let firstChange = 0;
+    const schedule = () => {
+      const now = performance.now();
+      if (!timer) firstChange = now;
+      clearTimeout(timer);
+      const wait = Math.max(0, Math.min(300, firstChange + 1000 - now));
+      timer = window.setTimeout(() => {
+        timer = 0;
+        run();
+      }, wait);
+    };
+
+    const observer = new MutationObserver((mutations) => {
+      if (mutations.some((mutation) => !isOwnNode(mutation.target))) schedule();
+    });
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+      attributes: true,
+      attributeFilter: WATCHED_ATTRIBUTES,
+    });
+
     run();
-    // volta a analisar quando as imagens acabarem de carregar
     window.addEventListener("load", run);
-    return () => window.removeEventListener("load", run);
+    window.addEventListener("popstate", schedule);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+      window.removeEventListener("load", run);
+      window.removeEventListener("popstate", schedule);
+    };
   }, []);
 
   useEffect(() => {
