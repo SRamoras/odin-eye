@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Example } from "@/components/playground/Example";
-import { PageBreaker } from "@/components/playground/PageBreaker";
 import { Sample } from "@/components/playground/Sample";
 import { Tag } from "@/components/playground/Tag";
 import { Container } from "@/components/ui/Container";
@@ -72,9 +71,6 @@ export default function Playground() {
                 </li>
                 <li>
                   <a href="#layout">Layout</a>
-                </li>
-                <li>
-                  <a href="#whole-page">Whole page</a>
                 </li>
               </ul>
             </nav>
@@ -225,8 +221,8 @@ export default function Playground() {
             <Heading>SEO</Heading>
             <Text tone="muted" className={styles.groupText}>
               Most SEO checks look at the whole page (title, description, Open Graph, canonical).
-              This page gets those right, so you can break them on purpose in{" "}
-              <a href="#whole-page">Whole page</a>. The link checks are below.
+              This page gets those right, so they only show up in the panel when something is
+              missing. The link checks are below.
             </Text>
 
             <div className={styles.grid}>
@@ -325,17 +321,6 @@ export default function Playground() {
             >
               <div className={styles.overflow}>This box is wider than the page</div>
             </Example>
-          </section>
-
-          <section id="whole-page" className={styles.group}>
-            <Heading>Whole page</Heading>
-            <Text tone="muted" className={styles.groupText}>
-              These checks look at the page as a whole, and this page passes them. Tick one to break
-              it for a moment and watch it show up in the panel. Everything is restored when you
-              untick it or leave the page.
-            </Text>
-
-            <PageBreaker />
           </section>
         </Container>
       </main>
