@@ -8,7 +8,8 @@
   "scripts": {
     "build": "npm run build -w odin-eye && npm run build -w web",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "test": "npm test -w odin-eye"
   },
   "devDependencies": {
     "prettier": "^3.9.9",

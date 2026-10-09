@@ -84,8 +84,9 @@ Checks live in `packages/odin-eye/src/checks/<category>/`, one file per check, w
    ```
 
 2. Export it from the category's `index.ts`. It runs automatically from there.
-3. Add a wrong and a right example to `apps/web/src/app/playground/page.tsx`.
-4. Add it to the list of checks in `packages/odin-eye/README.md`.
+3. Add tests in `packages/odin-eye/test/` for HTML that should be flagged and HTML that should pass.
+4. Add a wrong and a right example to `apps/web/src/app/playground/page.tsx`.
+5. Add it to the list of checks in both READMEs.
 
 Use `error` for things that break the page for some users, and `warning` for things worth fixing that still work. Use `element: null` for page-level issues, such as a missing meta tag.
 
@@ -95,7 +96,7 @@ For bigger changes, like a new option, a refactor or a different way of writing 
 
 - Branch from `dev` and open the PR against `dev`.
 - Use [Conventional Commits](https://www.conventionalcommits.org): `feat(odin-eye): ...`, `fix(web): ...`, `docs: ...`.
-- Make sure `npm run build` passes in `packages/odin-eye` and `apps/web`.
+- Make sure `npm test`, `npm run build` and `npm run format:check` pass from the repository root.
 - Keep comments to a minimum and write them in English.
 
 ## License
