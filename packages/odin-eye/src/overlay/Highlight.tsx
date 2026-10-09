@@ -11,8 +11,7 @@ export function Highlight({ issue, element, hovered }: HighlightProps) {
   const rect = element.getBoundingClientRect();
   if (rect.width === 0 && rect.height === 0) return null;
 
-  if (rect.bottom < 0 || rect.top > window.innerHeight) return null;
-  if (rect.right < 0 || rect.left > window.innerWidth) return null;
+  if (rect.top > window.innerHeight || rect.left > window.innerWidth) return null;
 
   return (
     <>

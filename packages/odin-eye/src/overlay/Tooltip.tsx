@@ -9,7 +9,7 @@ export function Tooltip({ issue, rect }: { issue: Issue; rect: DOMRect }) {
   const showAbove = rect.bottom + SPACE_NEEDED > window.innerHeight && rect.top > SPACE_NEEDED;
   const vertical = showAbove
     ? { bottom: window.innerHeight - rect.top + 8 }
-    : { top: Math.min(rect.bottom + 8, window.innerHeight - SPACE_NEEDED) };
+    : { top: Math.max(Math.min(rect.bottom + 8, window.innerHeight - SPACE_NEEDED), 8) };
 
   return (
     <div className="oe-tooltip" data-severity={issue.severity} style={{ left, ...vertical }}>
