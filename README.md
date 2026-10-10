@@ -158,4 +158,4 @@ Pull requests are welcome. Read the [contributing guide](CONTRIBUTING.md) first:
 
 ## License
 
-[MIT](LICENSE) © SRamoras
+[MIT](LICENSE) © Diogo Silva
